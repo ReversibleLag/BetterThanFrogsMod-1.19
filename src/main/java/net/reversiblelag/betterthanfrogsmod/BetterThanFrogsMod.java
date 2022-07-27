@@ -16,6 +16,7 @@ public class BetterThanFrogsMod {
     public static final String MOD_ID = "betterthanfrogsmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    //main call
     public BetterThanFrogsMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
