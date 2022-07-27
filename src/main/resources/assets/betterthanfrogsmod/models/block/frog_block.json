@@ -1,7 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "up":
-    "front": "betterthanfrogsmod:block/frog_block"
+    "all": "betterthanfrogsmod:block/frog_block"
   }
 }
