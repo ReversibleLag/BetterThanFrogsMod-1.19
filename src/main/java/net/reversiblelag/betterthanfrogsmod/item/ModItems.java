@@ -16,6 +16,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ModCreativeModeTab.BETTER_THAN_FROGS_TAB)
                     .stacksTo(1)
+                    .durability(30)
+            ));
+
+    public static final RegistryObject<Item> FROG_SKIN = ITEMS.register("frog_skin",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.BETTER_THAN_FROGS_TAB)
             ));
 
 
