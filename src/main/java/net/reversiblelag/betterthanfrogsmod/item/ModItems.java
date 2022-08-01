@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.reversiblelag.betterthanfrogsmod.BetterThanFrogsMod;
+import net.reversiblelag.betterthanfrogsmod.item.custom.FrogLegs;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -21,6 +22,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> FROG_SKIN = ITEMS.register("frog_skin",
             () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.BETTER_THAN_FROGS_TAB)
+            ));
+
+    public static final RegistryObject<Item> FROG_LEGS = ITEMS.register("frog_legs",
+            () -> new FrogLegs(new Item.Properties()
                     .tab(ModCreativeModeTab.BETTER_THAN_FROGS_TAB)
             ));
 

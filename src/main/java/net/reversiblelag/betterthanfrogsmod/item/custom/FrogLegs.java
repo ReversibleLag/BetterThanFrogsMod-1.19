@@ -1,5 +1,7 @@
 package net.reversiblelag.betterthanfrogsmod.item.custom;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -19,9 +21,20 @@ public class FrogLegs extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if(!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
             //Output a random number
+            outputRandomNumber(player);
             //set a cooldown
+            player.getCooldowns().addCooldown(this, 20);
         }
 
         return super.use(level, player, hand);
     }
+
+    private void outputRandomNumber(Player player) {
+        player.sendSystemMessage(Component.literal("Let frog legs guide you " + getRandomNumber()));
+    }
+
+    private int getRandomNumber(){
+        return RandomSource.createNewThreadLocalInstance().nextInt(10);
+    }
+
 }
